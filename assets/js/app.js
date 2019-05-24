@@ -6,6 +6,30 @@
 
 "use strict";
 
+//clips "limit" characters from given string
+// limit -> max number of characters taken from string
+// string to clip
+function clipString(string, limit) {
+
+    try {
+
+        if(isNaN(limit) || limit < 1)
+            throw "Use proper number";
+
+        if(string.length > limit)
+            string = string.substring(0, limit) + " ...";
+
+    } catch(err) {
+
+        alert("Error: clipping string -> " + err);
+        return 1;
+
+    }
+
+    return string;
+
+}
+
 //processes response for image results
 //response -> response from gapi
 function handleResponseImages(response) {
@@ -73,7 +97,7 @@ function changeSearchPage(curIndex, nextIndex) {
 //response -> response from gapi
 function handleResponseWebs(response) {
 
-    console.log(response); //debugging
+    // console.log(response); //debugging
     var destEl = document.getElementById('resultWebs');
 
     try {
@@ -94,12 +118,10 @@ function handleResponseWebs(response) {
             var item = response.items[i];
 
             //gets only first 125 chars from item snippet
-            if(item.snippet.length > 125)
-                item.snippet = item.snippet.substring(0, 125) + " ...";
+            item.snippet = clipString(item.snippet, 125);
 
             //gets only first 60 chars from item title
-            if(item.htmlTitle.length > 60)
-                item.htmlTitle = item.htmlTitle.substring(0, 60) + " ...";
+            item.htmlTitle = clipString(item.htmlTitle, 60);
 
             //creates div containing header, link, and snippet for every item
             destEl.innerHTML += "<div class='item'>"
