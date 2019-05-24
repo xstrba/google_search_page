@@ -134,7 +134,7 @@ function handleResponseWebs(response) {
             //creates div containing header, link, and snippet for every item
             destEl.innerHTML += "<div class='item'>"
                                     +"<h3>"+item.htmlTitle+"</h3>"
-                                    +"<a href='"+item.link+"'>"+item.formattedUrl+"</a>"
+                                    +"<a href='"+item.link+"' target='_blank'>"+item.formattedUrl+"</a>"
                                     +"<p>"+item.snippet+"</p>"
                                 +"</div>";
 
