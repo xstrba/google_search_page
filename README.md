@@ -3,4 +3,4 @@
 #
 # simple page displaying results from google
 #
-# using google custom search REST
+# using google custom search REST-full JSON api 
