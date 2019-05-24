@@ -41,6 +41,10 @@ function handleResponseImages(response) {
 
         if(response == null)
             throw "Some big mistake happend. Problably on the server side.";
+
+        if(response.error != null)
+            throw response.error.message;
+
         if(response.items == null || response.items.length <= 0)
             throw "Could't find any results for your search pattern.";
 
@@ -104,6 +108,10 @@ function handleResponseWebs(response) {
 
         if(response == null)
             throw "Some big mistake happend. Problably on the server side.";
+
+        if(response.error != null)
+            throw response.error.message;
+
         if(response.items == null || response.items.length <= 0){
 
             if(response.queries.request[0].startIndex > 1)
