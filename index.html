@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/pics/app-icon.png">
+    <title>Google Search</title>
+
+    <!-- Css Files -->
+    <link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+
+    <!-- No script section -->
+    <noscript>
+        <h1>You can't use this page without javascript</h1>
+    </noscript>
+
+    <h1 class="main-heading">Google Search Page</h1>
+    <div class="container">
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <form class="form-search" onsubmit="triggerSearch(event)">
+                <label for="searchString" class="hidden">Search</label>
+                <input type="search" id="searchString" class="search-input" name="searchString"
+                value="" placeholder="Search" required></input><!--
+                --><button type="submit" name="btnSubmit" class="btn btn-default btn-search">Search</button>
+            </form>
+        </div>
+
+        <!-- Uncomment to use offline styles debugging !dont forget about script at the end! -->
+        <!-- <button type="button" name="button" onclick="offSearch()">Offline</button> -->
+
+        <!-- Search results -->
+        <div class="search-result">
+            <div class="result-section result-images" name="images">
+                <h2>Images</h2>
+                <div id="resultImages" class="results"></div>
+            </div><!-- Remove unwanted space between divs
+            --><div class="result-section result-webs">
+                <h2>Web</h2>
+                <div id="resultWebs" class="results"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="assets/js/search.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+    <!-- Also for offline styles -->
+    <!-- <script type="text/javascript" src="assets/js/offline.js"></script> -->
+
+</body>
+</html>
