@@ -7,7 +7,7 @@
 
 //api key and google search engine
 //api allows 100 searches per day
-var API_KEY = "AIzaSyA5EIM-wmjTPGKRACzSYTgXKKMF9mMNe6c";
+var API_KEY = "";
 var CX = "017829095110677315037:9nsdcft82tg";
 
 //appends given queries to url
